@@ -9,14 +9,14 @@ import java.util.Map;
 
 import dev.yila.functional.Result;
 import dev.yila.functional.failure.Failure;
+import jakarta.enterprise.context.ApplicationScoped;
 
+@ApplicationScoped
 public class EstimatorImpl implements CarValueEstimator {
 
-    private final Map<String, BigDecimal> brandQuality;
-
-    public EstimatorImpl(Map<String, BigDecimal> brandQuality) {
-        this.brandQuality = brandQuality;
-    }
+    private final Map<String, BigDecimal> brandQuality = Map.of(
+            "Volkswagen", new BigDecimal("0.7"),
+            "Kia", new BigDecimal("0.6"));
 
     @Override
     public Result<BigDecimal> calculate(EstimateRequest request) {

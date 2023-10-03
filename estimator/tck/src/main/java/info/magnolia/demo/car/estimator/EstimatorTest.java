@@ -16,10 +16,6 @@ public abstract class EstimatorTest {
     private final static Long BIG_KILOMETERS = 30000L;
     private final static int YEAR = 2021;
 
-    private final Map<String, BigDecimal> BRAND_QUALITY = Map.of(
-            GOOD_BRAND, new BigDecimal("0.7"),
-            NOT_SO_GOOD_BRAND, new BigDecimal("0.6"));
-
     @Test
     public void calculation() {
         var estimator = newEstimator();
@@ -49,7 +45,7 @@ public abstract class EstimatorTest {
 
     @Test
     public void notSoGoodBrandHasLessValue() {
-        var estimator = newEstimator(BRAND_QUALITY);
+        var estimator = newEstimator();
         var good = estimator.calculate(new EstimateRequest(new Car(GOOD_BRAND, YEAR, LOW_KILOMETERS), PRICE_NEW)).get();
         var notSoGood = estimator.calculate(new EstimateRequest(new Car(NOT_SO_GOOD_BRAND, YEAR, LOW_KILOMETERS), PRICE_NEW)).get();
 
@@ -65,9 +61,5 @@ public abstract class EstimatorTest {
         assertTrue(younger.compareTo(older) > 0);
     }
 
-    protected CarValueEstimator newEstimator() {
-        return newEstimator(BRAND_QUALITY);
-    }
-
-    protected abstract CarValueEstimator newEstimator(Map<String, BigDecimal> brandQuality);
+    protected abstract CarValueEstimator newEstimator();
 }

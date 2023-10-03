@@ -70,6 +70,11 @@
                 <artifactId>estimator-tck</artifactId>
                 <version>${project.version}</version>
             </dependency>
+            <dependency>
+                <groupId>${project.groupId}</groupId>
+                <artifactId>estimator-impl</artifactId>
+                <version>${project.version}</version>
+            </dependency>
 
             <dependency>
                 <groupId>dev.yila</groupId>
