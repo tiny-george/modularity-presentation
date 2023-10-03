@@ -15,8 +15,8 @@
 
   <dependencies>
     <dependency>
-      <groupId>dev.yila</groupId>
-      <artifactId>functional</artifactId>
+      <groupId>${project.groupId}</groupId>
+      <artifactId>estimator-api</artifactId>
     </dependency>
     <dependency>
       <groupId>org.junit.jupiter</groupId>
