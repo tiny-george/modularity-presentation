@@ -23,12 +23,12 @@ public abstract class EstimatorTest {
     @Test
     public void calculation() {
         var estimator = newEstimator();
-        assertEquals(new BigDecimal("21000"), estimator.calculate(
+        assertEquals(17661, estimator.calculate(
                 new EstimateRequest(new Car(GOOD_BRAND, YEAR, BIG_KILOMETERS), PRICE_NEW)
-        ).get());
-        assertEquals(new BigDecimal("18000"), estimator.calculate(
+        ).get().intValue());
+        assertEquals(13746, estimator.calculate(
                 new EstimateRequest(new Car(NOT_SO_GOOD_BRAND, YEAR - 2, LOW_KILOMETERS), PRICE_NEW)
-        ).get());
+        ).get().intValue());
     }
 
     @Test
