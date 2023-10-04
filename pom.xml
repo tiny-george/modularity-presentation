@@ -21,7 +21,7 @@
   <modules>
     <module>bom</module>
     <module>build-parent</module>
-    <module>car-app</module>
     <module>estimator</module>
+    <module>car-app</module>
   </modules>
 </project>
