@@ -22,5 +22,7 @@
     <module>tck</module>
     <module>impl</module>
     <module>endpoints</module>
+    <module>http-client</module>
+    <module>package</module>
   </modules>
 </project>
