@@ -46,7 +46,7 @@
     </dependency>
     <dependency>
       <groupId>${project.groupId}</groupId>
-      <artifactId>estimator-impl</artifactId>
+      <artifactId>estimator-http-client</artifactId>
     </dependency>
 
     <dependency>
